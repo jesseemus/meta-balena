@@ -336,5 +336,6 @@ module.exports = {
 		'./tests/smoke',
 		'./tests/rollback-altboot',
 		'./tests/rollback-health',
+		'./tests/storagemigration',
 	],
 };
