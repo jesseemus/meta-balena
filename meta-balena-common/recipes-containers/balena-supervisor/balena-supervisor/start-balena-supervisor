@@ -81,6 +81,8 @@ runSupervisor() {
         -e "LISTEN_PORT=$LISTEN_PORT" \
         -e "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS}" \
         -e "SUPERVISOR_IMAGE=${SUPERVISOR_IMAGE}" \
+        --label="${BALENA_HOSTOS_APP_UUID}=${SUPERVISOR_APP_UUID}" \
+        --label="${BALENA_HOSTOS_SERVICE_NAME}=${SUPERVISOR_SERVICE_NAME}" \
         "${SUPERVISOR_IMAGE}"
 }
 

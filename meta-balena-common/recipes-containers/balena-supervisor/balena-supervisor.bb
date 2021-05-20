@@ -72,16 +72,18 @@ api_fetch_supervisor_image() {
 }
 
 do_install () {
-	SUPERVISOR_IMAGE=$(api_fetch_supervisor_image "${SUPERVISOR_VERSION}")
-	if [ -z "${SUPERVISOR_IMAGE}" ]; then
-		bbfatal "Could not retrieve supervisor image for version ${SUPERVISOR_VERSION}"
-	fi
+	SUPERVISOR_IMAGE=$(jq --raw-output '.apps | .[] | select(.name=="'"${SUPERVISOR_APP}"'") | .releases[].services | .[].image' ${DEPLOY_DIR_IMAGE}/apps.json)
+	SUPERVISOR_APP_UUID=$(jq --raw-output '.apps | .[] | select(.name=="'"${SUPERVISOR_APP}"'") | .releases | keys[]' ${DEPLOY_DIR_IMAGE}/apps.json)
+	SUPERVISOR_SERVICE_NAME=$(jq --raw-output '.apps | .[] | select(.name=="'"${SUPERVISOR_APP}"'") | .releases[].services | .[].serviceName' ${DEPLOY_DIR_IMAGE}/apps.json)
+	bbnote "Pre-loaded supervisor: uuid ${SUPERVISOR_APP_UUID} image ${SUPERVISOR_IMAGE} service ${SUPERVISOR_SERVICE_NAME}"
 	# Generate supervisor conf
 	install -d ${D}${sysconfdir}/balena-supervisor/
 	install -m 0755 ${WORKDIR}/supervisor.conf ${D}${sysconfdir}/balena-supervisor/
 	sed -i -e "s,@LED_FILE@,${LED_FILE},g" ${D}${sysconfdir}/balena-supervisor/supervisor.conf
 	sed -i -e "s,@SUPERVISOR_VERSION@,${SUPERVISOR_VERSION},g" ${D}${sysconfdir}/balena-supervisor/supervisor.conf
 	sed -i -e "s,@SUPERVISOR_IMAGE@,${SUPERVISOR_IMAGE},g" ${D}${sysconfdir}/balena-supervisor/supervisor.conf
+	sed -i -e "s,@SUPERVISOR_APP_UUID@,${SUPERVISOR_APP_UUID},g" ${D}${sysconfdir}/balena-supervisor/supervisor.conf
+	sed -i -e "s,@SUPERVISOR_SERVICE_NAME@,${SUPERVISOR_SERVICE_NAME},g" ${D}${sysconfdir}/balena-supervisor/supervisor.conf
 
 	install -d ${D}/resin-data
 
