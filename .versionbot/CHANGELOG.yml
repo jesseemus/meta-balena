@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'tests/hup: Add storagemigration tests'
+      hash: 568ecc52ea68e0144d1f0c0196f01b4145885f78
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Robert Günzler <robertg@balena.io>
+        signed-off-by: Robert Günzler <robertg@balena.io>
+      author: Robert Günzler
+      nested: []
+  version: 2.87.10
+  date: 2021-11-17T14:22:26.967Z
+- commits:
     - subject: >-
         hostapp-update-hooks: Add a hook that aborts HUP to unsigned OS under
         secure boot
