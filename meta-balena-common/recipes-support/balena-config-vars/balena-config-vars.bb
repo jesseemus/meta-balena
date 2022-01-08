@@ -7,6 +7,8 @@ SRC_URI = " \
     file://config-json.path \
     file://config-json.service \
     file://config-json.target \
+    file://os-engineconfig \
+    file://os-engineconfig.service \
     file://os-networkmanager \
     file://os-networkmanager.service \
     file://os-udevrules \
@@ -32,6 +34,7 @@ SYSTEMD_SERVICE:${PN} = " \
     config-json.path \
     config-json.service \
     config-json.target \
+    os-engineconfig.service \
     os-networkmanager.service \
     os-udevrules.service \
     os-sshkeys.service \
@@ -40,6 +43,7 @@ SYSTEMD_SERVICE:${PN} = " \
 do_install() {
     install -d ${D}${sbindir}
     install -m 0755 ${WORKDIR}/balena-config-vars ${D}${sbindir}/
+    install -m 0755 ${WORKDIR}/os-engineconfig ${D}${sbindir}/
     install -m 0755 ${WORKDIR}/os-networkmanager ${D}${sbindir}/
     install -m 0755 ${WORKDIR}/os-udevrules ${D}${sbindir}/
     install -m 0755 ${WORKDIR}/os-sshkeys ${D}${sbindir}/
@@ -49,6 +53,7 @@ do_install() {
         install -c -m 0644 ${WORKDIR}/config-json.path ${D}${systemd_unitdir}/system
         install -c -m 0644 ${WORKDIR}/config-json.service ${D}${systemd_unitdir}/system
         install -c -m 0644 ${WORKDIR}/config-json.target ${D}${systemd_unitdir}/system
+        install -c -m 0644 ${WORKDIR}/os-engineconfig.service ${D}${systemd_unitdir}/system
         install -c -m 0644 ${WORKDIR}/os-networkmanager.service ${D}${systemd_unitdir}/system
         install -c -m 0644 ${WORKDIR}/os-udevrules.service ${D}${systemd_unitdir}/system
         install -c -m 0644 ${WORKDIR}/os-sshkeys.service ${D}${systemd_unitdir}/system
