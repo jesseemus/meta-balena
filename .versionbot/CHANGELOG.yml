@@ -1,4 +1,15 @@
 - commits:
+    - subject: 'patch: Add package-lock.json files for tests'
+      hash: d06878d0fa9880d4a757121558d8ed0705765190
+      body: ''
+      footer:
+        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+      author: Vipul Gupta (@vipulgupta2048)
+      nested: []
+  version: 2.88.18
+  date: 2022-01-11T17:45:31.959Z
+- commits:
     - subject: 'recipes-core/coreutils: Use 64bit time symbols'
       hash: 1c86b30cbad9eecb74185610d146a71f81f70857
       body: |
