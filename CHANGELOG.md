@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v2.89.11
+## (2022-01-28)
+
+* tests: os: add test for default engine runtime [Joseph Kogut]
+* balena-config-vars: create os-engineconfig [Joseph Kogut]
+* common: add crun to packagegroup-resin [Joseph Kogut]
+* crun: make systemd optional [Joseph Kogut]
+* crun: remove go-md2man-native from DEPENDS [Joseph Kogut]
+* crun: copy recipe from meta-virtualization [Joseph Kogut]
+* libseccomp: Convert to Honister syntax [Joseph Kogut]
+* libseccomp: remove ptest related code [Joseph Kogut]
+* libseccomp: copy recipe from meta-security [Joseph Kogut]
+* oci-runtime-spec: copy recipe from meta-virtualization [Joseph Kogut]
+* oci-image-spec: copy recipe from meta-virtualization [Joseph Kogut]
+
 # v2.89.10
 ## (2022-01-28)
 
