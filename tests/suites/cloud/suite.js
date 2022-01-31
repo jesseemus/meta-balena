@@ -106,10 +106,10 @@ module.exports = {
     }
 
     // Authenticating balenaSDK
-    this.log("Logging into balena with balenaSDK");
     await this.context
-      .get()
-      .cloud.balena.auth.loginWithToken(this.suite.options.balena.apiKey);
+    .get()
+    .cloud.balena.auth.loginWithToken(this.suite.options.balena.apiKey);
+    this.log(`Logged in with ${await this.context.get().cloud.balena.auth.whoami()}'s account on ${this.suite.options.balena.apiUrl} using balenaSDK`);
 
     // create a balena application
     this.log("Creating application in cloud...");
@@ -286,7 +286,7 @@ module.exports = {
     this.suite.teardown.register(async () => {
       await this.context.get().worker.archiveLogs(this.id,  `${this.context.get().balena.uuid.slice(0, 7)}.local`,);
     });
-    
+
     await this.context.get().worker.off();
     await this.context.get().worker.flash(this.context.get().os.image.path);
     await this.context.get().worker.on();
@@ -294,7 +294,7 @@ module.exports = {
     this.log("Waiting for device to be reachable");
     await this.context.get().utils.waitUntil(async() => {
       console.log(`checking device is online in the dashboard....`)
-      
+
       let isOnline =  await this.context
         .get()
         .cloud.balena.models.device.isOnline(this.context.get().balena.uuid);
