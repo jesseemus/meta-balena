@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.89.13
+## (2022-01-31)
+
+* patch: Delete conf.js for suites [Vipul Gupta (@vipulgupta2048)]
+
 # v2.89.12
 ## (2022-01-31)
 

@@ -1,4 +1,15 @@
 - commits:
+    - subject: "patch: Delete conf.js for suites"
+      hash: a6f87813bb72664e5669329997e7bfbe1eb97945
+      body: ""
+      footer:
+        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+      author: Vipul Gupta (@vipulgupta2048)
+      nested: []
+  version: 2.89.13
+  date: 2022-01-31T20:31:40.146Z
+- commits:
     - subject: "resindataexpander: expand fs independent of partition"
       hash: 2889cb431e02f1f3e030f6c05a42be7374457eeb
       body: |
