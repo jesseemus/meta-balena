@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v2.94.0
+## (2022-02-28)
+
+* README: Add a section for the overlay data blocks [Alex Gonzalez]
+* hostapp-update-hooks: Add current state migration [Alex Gonzalez]
+* package-group-resin: Replace hostapp-extensions-update [Alex Gonzalez]
+* Add update-data-store to replace update-hostapp-extensions [Alex Gonzalez]
+* os-helpers: Add a os-helpers-api target library [Alex Gonzalez]
+* Add app UUID and service name labels to supervisor container [Alex Gonzalez]
+* docker-disk: Allow to define a custom CA [Alex Gonzalez]
+* Install data store images [Alex Gonzalez]
+* docker-disk: Add balena-apps file [Alex Gonzalez]
+* Revert "docker-disk: Add the host extension images to the data partition" [Alex Gonzalez]
+* Revert "resin-vars: Parse the HOSTEXT_IMAGES variable from config.json" [Alex Gonzalez]
+
 # v2.93.0
 ## (2022-02-26)
 
