@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.95.1
+## (2022-03-09)
+
+* Make sure u-boot is able to import an environment file [Alex Gonzalez]
+
 # v2.95.0
 ## (2022-03-04)
 
