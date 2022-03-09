@@ -1,4 +1,22 @@
 - commits:
+    - subject: Make sure u-boot is able to import an environment file
+      hash: a705c69e6e5a7bd6870fed51d06caf094bc7999f
+      body: |
+        BalenaOS requires the `env import` command to be available so make sure
+        to configure u-boot accordingly.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Changelog-entry: Make sure u-boot is able to import an environment file
+        changelog-entry: Make sure u-boot is able to import an environment file
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.95.1
+  title: "'resin-u-boot: Make sure import command is available'"
+  date: 2022-03-09T08:57:38.604Z
+- commits:
     - subject: Adds modem test suite
       hash: c3cc64723e8a8d50aa5c6d4ece52d2c5a3b90e8a
       body: ""
