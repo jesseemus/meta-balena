@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.95.10
+## (2022-03-30)
+
+* tests: connectivity: proxy: Add sleep before checking logs [Florin Sarbu]
+
 # v2.95.9
 ## (2022-03-28)
 
