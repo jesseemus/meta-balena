@@ -1,6 +1,17 @@
 Change log
 -----------
 
+# v2.95.16
+## (2022-04-08)
+
+* grub-conf: fix partition indexes in LUKS config [Michal Toman]
+* os-helpers-fs: incorporate get_part_table_type from resindataexpander [Michal Toman]
+* hostapp-update-hooks: use stage2 bootloader GRUB config when using LUKS [Michal Toman]
+* balena-rollback: Fix partition index detection for luks devices [Michal Toman]
+* balena-rollback: Find following symbolic links [Alex Gonzalez]
+* hostapp-update-hooks: Find following symlinks [Alex Gonzalez]
+* hostapp-update-hooks: Fix partition index detection for luks devices [Alex Gonzalez]
+
 # v2.95.15
 ## (2022-04-06)
 

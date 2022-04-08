@@ -1,4 +1,106 @@
 - commits:
+    - subject: "grub-conf: fix partition indexes in LUKS config"
+      hash: 96f908e80e5b2aefd7840a1f21347bd49274ef7e
+      body: |
+        On most device types rootA and rootB are partitions 2 and 3
+        but with LUKS encryption and boot/EFI split they are shifted to 3 and 4
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Michal Toman <michalt@balena.io>
+        signed-off-by: Michal Toman <michalt@balena.io>
+      author: Michal Toman
+      nested: []
+    - subject: "os-helpers-fs: incorporate get_part_table_type from resindataexpander"
+      hash: 70a92ec444a06bf235138c7e2f530f2df13cf14d
+      body: >
+        This is only called from a single script within meta-balena at this
+        moment
+
+        but update hooks for particular device types need it as well.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Michal Toman <michalt@balena.io>
+        signed-off-by: Michal Toman <michalt@balena.io>
+      author: Michal Toman
+      nested: []
+    - subject: "hostapp-update-hooks: use stage2 bootloader GRUB config when using LUKS"
+      hash: 1bb76fbe130915a8ce79e6f9febc35876cb65b44
+      body: |
+        We are using two variants of GRUB configs - one for LUKS-encrypted OS
+        and the other one for the rest. HUP needs to acknowledge this and use
+        the correct one based on the system being updated.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Michal Toman <michalt@balena.io>
+        signed-off-by: Michal Toman <michalt@balena.io>
+      author: Michal Toman
+      nested: []
+    - subject: "balena-rollback: Fix partition index detection for luks devices"
+      hash: 2cc8508da3ce0e4c1bcc3c6ea7d99d02ffa6be5c
+      body: |
+        This is the same as we do for hostapp-update-hooks
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Michal Toman <michalt@balena.io>
+        signed-off-by: Michal Toman <michalt@balena.io>
+      author: Michal Toman
+      nested: []
+    - subject: "balena-rollback: Find following symbolic links"
+      hash: 50a3af650d0037d0299b29d3b7ccc87aae9fbf0f
+      body: |
+        On full disk encrypted devices the EFI partition is a soft link in the
+        boot partition. This commit fixes detecting files in the EFI partition
+        from the boot partition.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "hostapp-update-hooks: Find following symlinks"
+      hash: 18f497bd21cb33b41bae2bdef58f29433a8bc762
+      body: |
+        On full disk encrypted devices the EFI partition is a soft link in the
+        boot partition. This commit fixes detecting files in the EFI partition
+        from the boot partition.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "hostapp-update-hooks: Fix partition index detection for luks devices"
+      hash: 73a3dd2ccf5b2f3617a7ce06d2214b1a61f05e71
+      body: >
+        When using LUKS encryption, the output of lsblk is:
+
+            sda                                             8:0    0    8G  0 disk
+          |-sda1                                          8:1    0   40M  0 part  /mnt/boot/EFI
+          |-sda2                                          8:2    0   42M  0 part
+          | `-luks-a91cd125-9e4c-45e6-b3f4-1e9b4ec9e5b9 250:0    0   40M  0 crypt /mnt/boot
+
+        This commit allows extracting the physical device (sdaN) whic is needed
+
+        to extract the partition index using sysfs both for luks or standard
+
+        devices.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.95.16
+  title: "'HUP support for LUKS encrypted partitions'"
+  date: 2022-04-08T09:21:06.569Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
