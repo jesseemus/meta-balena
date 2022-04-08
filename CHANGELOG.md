@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.95.16
+## (2022-04-08)
+
+* timeinit/timesync-https: Update rtc after setting system time [Alexandru Costache]
+
 # v2.95.15
 ## (2022-04-06)
 
