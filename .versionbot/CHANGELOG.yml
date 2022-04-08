@@ -1,4 +1,23 @@
 - commits:
+    - subject: "timeinit/timesync-https: Update rtc after setting system time"
+      hash: 2f10450ba6af38be15112f1989cb6ba03ea38815
+      body: |
+        This solves a problem seen on a device on which, although
+        timeinit-rtc finishes running before timesync-https, chronyd
+        sets the system time to the incorrect rtc time
+        as soon as timesync-https finished running and setting the correct date
+        from the servers.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.95.16
+  title: "'timeinit/timesync-https: Update rtc after setting system time'"
+  date: 2022-04-08T12:24:14.485Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
