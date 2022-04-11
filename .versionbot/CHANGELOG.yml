@@ -1,4 +1,20 @@
 - commits:
+    - subject: "kernel-balena: Mention https protocol for github repository"
+      hash: 895b83dd31194441eab1f4ea98c6cee1dc9146f2
+      body: |
+        Github now requires for the https protocol to be used
+        when cloning repositories.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.95.16
+  title: "'kernel-balena: Mention https protocol for github repository'"
+  date: 2022-04-11T15:28:45.491Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
