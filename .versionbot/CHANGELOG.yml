@@ -1,4 +1,83 @@
 - commits:
+    - subject: "balena-config-vars: unit-conf: Correct description"
+      hash: 36bec5b094551d4e91ce1afe35fb97e943e22499
+      body: |
+        The os-networkmanager entry had an incorrect description.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "tests: os: Remove sshKeys test"
+      hash: 07cc2788afb8c40b13aabab792801ccb323a193e
+      body: |
+        This is replaced by an SSH authentication test in the cloud suite, which
+        is more comprenhensive.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "tests: cloud: Add SSH authentication tests"
+      hash: bb0ad52d9eb7fd9ce413e00444736ada5a8c4e36
+      body: |
+        This new test validates SSH authentication both in production and
+        development mode.
+
+        A managed device is always accessible via the configured custom keys.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "os-sshkeys: When ssh keys change, regenerate development configuration"
+      hash: 8ad306989796e19e3bd176d64522c9df412cd5b9
+      body: |
+        The behaviour of the SSH connection depends on whether custom keys are
+        present or not. This commit calls out to generate the development mode
+        configuration file on ssh key change.
+
+        Fixes #2530
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "development-features: use os-helpers-devmode include file"
+      hash: f87d207c8c2d0f1ce7422f4e79b6ca04c90914d3
+      body: |
+        The development mode configuration file is now generated on a helper
+        script.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: "os-helpers: Add os-helpers-devmode"
+      hash: 69aea667a8995b00bf37645caa2456e3f8d07d75
+      body: |
+        This extracts the generation of the development mode configuration file
+        so it can be shared.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.95.16
+  date: 2022-04-14T11:20:31.025Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
