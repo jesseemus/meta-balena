@@ -1,4 +1,18 @@
 - commits:
+    - subject: "os: tests: optimize connectivity tests"
+      hash: b0f05d0382196125aedfef3dfacf17836548dab0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Joseph Kogut <joseph@balena.io>
+        signed-off-by: Joseph Kogut <joseph@balena.io>
+      author: Joseph Kogut
+      nested: []
+  version: 2.95.16
+  title: "'os: tests: optimize connectivity tests'"
+  date: 2022-04-14T17:09:59.465Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
