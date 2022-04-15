@@ -1,4 +1,25 @@
 - commits:
+    - subject: "resin-device-register: avoid blocking the flasher when not connected"
+      hash: eca36955e6f0c9ab3610f716b0577f2f0f0317ec
+      body: >
+        Starting with v2.91.6 device provisioning will not start if the device
+
+        was unable to register in the cloud due to lack of internet connectivity.
+
+        To avoid this, we switch to retrying 3 times with the usual 2 second delay
+
+        between attempts, after which the flashing process will start.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.95.16
+  title: "'resin-device-register: improve provisioning'"
+  date: 2022-04-15T10:24:00.454Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
