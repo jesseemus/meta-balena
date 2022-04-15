@@ -1,4 +1,21 @@
 - commits:
+    - subject: "tests/hup: Test hostapp-update from current release"
+      hash: b908f95781e6e8cf55c68a683d1f064ab986ead4
+      body: |
+        After HUP from previous release to current under-test release
+        we should HUP again to ensure hostapp-update is sane in the
+        new release.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.95.16
+  title: "'Enable bash traces in hostapp-update for testing'"
+  date: 2022-04-15T23:54:42.985Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
