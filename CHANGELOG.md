@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.95.16
+## (2022-04-15)
+
+* resin-device-register: avoid blocking the flasher when not connected [Alexandru Costache]
+
 # v2.95.15
 ## (2022-04-06)
 
