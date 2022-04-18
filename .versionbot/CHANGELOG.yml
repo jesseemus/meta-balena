@@ -1,4 +1,22 @@
 - commits:
+    - subject: Refresh PKI assets from config endpoint
+      hash: 5f85a85b59c9015e39ec2fc9c2cb4c4cb437e921
+      body: >
+        * Fixes #2569
+
+        * ensure OpenVPN client always starts with the latest CA certificate
+          from API config endpoint as this certificate may have changed and
+          we don't want VPN to be down for ~24 hours until os-config is triggered
+          by systemd timer
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: ab77
+      nested: []
+  version: 2.96.0
+  title: "'Refresh PKI assets from config endpoint'"
+  date: 2022-04-18T14:30:21.326Z
+- commits:
     - subject: "kernel-headers-test: clean tools like fixdep"
       hash: bdc217b2da79349989f32b65454a4e5e2509fa1a
       body: |
