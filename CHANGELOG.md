@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.96.0
+## (2022-04-18)
+
+* Refresh PKI assets from config endpoint [ab77]
+
 # v2.95.15
 ## (2022-04-06)
 
